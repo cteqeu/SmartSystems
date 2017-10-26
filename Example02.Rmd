@@ -1,0 +1,29 @@
+---
+title: "Example02"
+author: "Vincent Claes"
+date: "26 oktober 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Our Location
+
+```{r echo = TRUE, warning=FALSE}
+library(leaflet)
+
+EAIcon <- makeIcon(
+  iconUrl = "http://pxl-ea-ict.be/trinity/images/2.png",
+  iconWidth = 160, iconHeight = 100,
+  iconAnchorX = 22, iconAnchorY = 94
+)
+
+
+EA_map <- leaflet() %>% 
+  addTiles() %>%
+  addMarkers(lng=5.384984, lat=50.927781, icon = EAIcon, popup='<a href="https://www.facebook.com/pbaeaict/">PBA EA-ICT!</a>')
+EA_map
+```
+
