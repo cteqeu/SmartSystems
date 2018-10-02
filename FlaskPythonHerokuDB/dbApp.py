@@ -49,6 +49,7 @@ def user_detail(id):
     temp = Temperature.query.get(id)
     return temperature_schema.jsonify(temp)	
 
+# NEW VALUE >POST METHOD	
 @app.route("/api/temp", methods=["POST"])
 def add_temp():
     value = request.json['value']
@@ -63,7 +64,7 @@ def add_temp():
 
     return temperature_schema.jsonify(tempe)
 
-# UPDATE TEMP VALUE => NOT YET TESTED	
+# UPDATE TEMP VALUE	
 @app.route("/api/temp/<id>", methods=["PUT"])
 def user_update(id):
     tempe = Temperature.query.get(id)
@@ -74,16 +75,16 @@ def user_update(id):
     tempe.place = place
 
     db.session.commit()
-    return user_schema.jsonify(tempe)
+    return temperature_schema.jsonify(tempe)
 	
-# DELETE TEMP VALUE => NOT YET TESTED
+# DELETE TEMP VALUE 
 @app.route("/api/temp/<id>", methods=["DELETE"])
 def user_delete(id):
     tempe = Temperature.query.get(id)
     db.session.delete(tempe)
     db.session.commit()
 
-    return user_schema.jsonify(tempe)	
+    return temperature_schema.jsonify(tempe)	
 	
 if __name__ == '__main__':
     app.run()
