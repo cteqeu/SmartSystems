@@ -49,15 +49,14 @@ def user_detail(id):
     temp = Temperature.query.get(id)
     return temperature_schema.jsonify(temp)	
 
-# CREATE NEW TEMP VALUE => NOT YET TESTED
 @app.route("/api/temp", methods=["POST"])
 def add_temp():
     value = request.json['value']
     place = request.json['place']
 
-    new_temp = Temperature(value, place)
+    new_temp = Temperature(value=value, place=place)
 
-    db.session.add(new_user)
+    db.session.add(new_temp)
     db.session.commit()
 
     tempe = Temperature.query.get(new_temp.id)
