@@ -1,0 +1,3 @@
+conda create --name robo_cteq
+conda activate robo_cteq
+pip install https://github.com/OakwoodAI/automagica/tarball/master
