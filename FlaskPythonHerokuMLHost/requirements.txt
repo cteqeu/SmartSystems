@@ -1,0 +1,9 @@
+Flask
+gunicorn
+wtforms
+flask_wtf
+joblib
+numpy
+pandas
+flask
+sklearn

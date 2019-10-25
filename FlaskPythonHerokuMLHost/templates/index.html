@@ -1,0 +1,37 @@
+<!-- by Vincent Claes cteq.eu -->
+</html>
+<head>
+<title>Corolla Price Calculator</title>
+</head>
+	<body>
+	<h1>Calculate Corolla Price</h1>
+		{% block content %}{% endblock %}
+		<form action="/start" method="post" novalidate>
+			{{ form.hidden_tag() }}
+			<p>
+				{{ form.age.label }}<br>
+				{{ form.age(size=32) }}
+			</p>
+			<p>
+				{{ form.KM.label }}<br>
+				{{ form.KM(size=32) }}
+			</p>
+			<p>
+				{{ form.HP.label}}<br>
+				{{ form.HP(size=32)}}
+			</p>
+			<p>
+				{{ form.CC.label}}<br>
+				{{ form.CC(size=32)}}
+			</p>
+			<p>
+				{{ form.Weight.label}}<br>
+				{{ form.Weight(size=32)}}
+			</p>
+			
+			<p>{{ form.submit() }}</p>
+		</form><br>
+	
+
+	</body>
+</html>
