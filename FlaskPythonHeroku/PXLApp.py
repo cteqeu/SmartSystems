@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/hi', methods = ['GET'])
 def api_hi():
     data = {
-        'hello': 'world',
+        'hello': 'hiworld',
         'number': 456
     }
     js = json.dumps(data)
