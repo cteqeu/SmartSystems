@@ -15,11 +15,12 @@ app.config['SECRET_KEY']='mysecret'
 test_data_f =  { "Age" : 10, "KM" : 25000, "HP" : 110, "CC" : 1600, "Weight" : 1200}  
 
 class PredictForm(FlaskForm):
-    age = IntegerField('Age', validators=[DataRequired()])
-    KM = IntegerField('KM' , validators=[DataRequired()])
-    HP = IntegerField('HP' , validators=[DataRequired()])
-    CC = IntegerField('CC' , validators=[DataRequired()])
-    Weight = IntegerField('Weight', validators=[DataRequired()])
+    #validators=[DataRequired()] has problems with input value 0
+    age = IntegerField('Age')
+    KM = IntegerField('KM')
+    HP = IntegerField('HP')
+    CC = IntegerField('CC')
+    Weight = IntegerField('Weight')
     submit = SubmitField('Calculate Price')
 
 class Config(object):
