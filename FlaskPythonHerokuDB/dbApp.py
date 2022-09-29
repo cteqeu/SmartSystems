@@ -6,6 +6,7 @@ from flask_marshmallow import Marshmallow
 from flask_restful import Resource, Api, reqparse
 from marshmallow_sqlalchemy import ModelSchema
 from datetime import datetime
+from collections.abc import Mapping
 
 # made by Vincent Claes
 # www.cteq.eu
