@@ -59,11 +59,11 @@ def start():
 # This can be used with curl to test the api/webserver
 @app.route('/predict', methods=['POST'])
 def price_predict():
-   if request.method == 'POST':
-   # Get the data from the POST method
-     data = request.get_json(force=True)     
-   # Predict using Model loaded from pkl file 
-   return jsonify(model_pkl.predict(pd.DataFrame(pd.DataFrame(data, index=[0])))[0])
+    if request.method == 'POST':
+        # Get the data from the POST method
+        data = request.get_json(force=True)
+        # Predict using Model loaded from pkl file
+        return jsonify(model_pkl.predict(pd.DataFrame(data, index=[0]))[0])
 
 @app.route('/apitest_json')
 def apitest_json():
@@ -76,4 +76,3 @@ def apitest():
 
 if __name__ == '__main__':
     app.run(debug=True)
-   
